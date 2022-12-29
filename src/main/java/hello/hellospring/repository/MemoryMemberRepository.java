@@ -30,8 +30,12 @@ public class MemoryMemberRepository implements MemberRepository{
                 .findAny();
     }
 
-    @Overridegi
+    @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 }
